@@ -1,0 +1,105 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.grid-container {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-template-areas: "ip-histogram hourly-traffic top-contributors top-hours";
+  grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+  gap: 16px;
+}
+
+/* Card Styling */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.ip-histogram {
+  grid-area: ip-histogram;
+  /* width: 160%; */
+}
+.hourly-traffic {
+  grid-area: hourly-traffic;
+}
+.top-contributors {
+  grid-area: top-contributors;
+}
+.top-hours {
+  grid-area: top-hours;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  color: #3498db;
+  margin-top: 0;
+  font-size: 1.3em;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+/* Table/Preformatted Text */
+pre {
+  white-space: pre-wrap;
+  font-family: "Courier New", Courier, monospace;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  line-height: 1.6;
+  color: #2c3e50;
+}
+
+/* Loading & Error States */
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2em;
+  color: #7f8c8d;
+}
+
+.error {
+  color: #e74c3c;
+  background: #fdeded;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 1.8em;
+  }
+}
